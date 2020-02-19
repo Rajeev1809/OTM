@@ -16,10 +16,7 @@ public class TestDaoMapImpl implements TestDao {
 	
 	private Map<Integer,Test> testmap;
 	
-	public int testing()
-	{
-		return 0;
-	}
+	
 	public  TestDaoMapImpl()
 	{
 		testmap=new HashMap<Integer,Test>();
