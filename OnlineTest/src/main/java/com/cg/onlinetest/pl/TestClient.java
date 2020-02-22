@@ -38,19 +38,19 @@ public class TestClient {
 		int choice=0;
 		while(choice!=8)
 		{
-		   System.out.println("1.addTest");
+		 //  System.out.println("1.addTest");
 		   System.out.println("2.updateTest");
 		   System.out.println("3.deleteTest");
-		   System.out.println("4.assignTest");
-		   System.out.println("5.addQuestion");
-		   System.out.println("6.updateQuestion");
-		   System.out.println("7.deleteQuestion");
-		   System.out.println("Enter the choice");
+		 //  System.out.println("4.assignTest");
+		  // System.out.println("5.addQuestion");
+		 //  System.out.println("6.updateQuestion");
+		 //  System.out.println("7.deleteQuestion");
+		 //  System.out.println("Enter the choice");
 		    choice=sc.nextInt();  
 		     int testId=0;
 		    switch(choice)
 		    {
-		    case 1:
+		   // case 1:
 		    	
 		    	  /*  	try
 		  	{
@@ -116,7 +116,7 @@ public class TestClient {
 		    	{
 		    		System.err.println(e.getMessage());
 		    	}
-		    case 4:
+		 //   case 4:
 		    	/*try
 		    	{
 		    		System.out.println("Enter the userId");
@@ -129,7 +129,7 @@ public class TestClient {
 		    	{
 		    		System.err.println(e.getMessage());
 		    	}*/
-		    case 5:
+		 //   case 5:
 		    	/*try
 		    	{
 		    		System.out.println("Enter the testId in which you want to add question");
@@ -144,7 +144,7 @@ public class TestClient {
 		    	{
 		    		System.err.println(e.getMessage());
 		    	}*/
-		    case 6:
+		  //  case 6:
 		    	/*	try
 		    	{
 		    		System.out.println("Enter the question id to update");
@@ -159,7 +159,7 @@ public class TestClient {
 		    	{
 		    		System.err.println(e.getMessage());
 		    	}*/
-		    case 7:
+		  //  case 7:
 		    	/*	try
 		    	{
 		    		System.out.println("Enter the question id to delete");

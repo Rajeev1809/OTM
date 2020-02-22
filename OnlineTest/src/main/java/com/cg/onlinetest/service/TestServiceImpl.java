@@ -26,17 +26,8 @@ public class TestServiceImpl implements TestService {
 		 flag=testid.matches("[0-9]{4}+");
 		return flag;
 	}
-	@Override
-	public boolean validateTotalMarks(double testTotalMarks) {
-		String testtotalmarks=String.valueOf(testTotalMarks);
-		boolean flag=false;
-		if(testTotalMarks>0&&testTotalMarks<100)
-		{
-			flag=true;
-		 flag=testtotalmarks.matches("[0-9]{2}+");
-		}
-		return flag;
-	}
+	
+	
 @Override
 	public Test updateTest( int testId,Test test) throws OnlineTestException {
 	
@@ -59,15 +50,6 @@ public class TestServiceImpl implements TestService {
 	}
 	
 	
-	boolean b=validateTotalMarks(test.getTestTotalMarks()); 
-	if(b==false)
-	{
-	if(test.getTestTotalMarks()<0)
-	{
-		throw new OnlineTestException(" marks should  be positive");
-	}
-		throw new OnlineTestException(" marks should be between 0 to 100");
-	}
 	
 	return testDao.updateTest(testId,test);
 	}

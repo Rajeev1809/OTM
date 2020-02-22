@@ -14,7 +14,6 @@ public interface TestService {
 	public Test deleteTest(int testId)throws OnlineTestException;
 	
 	public boolean validateTitle(String testTitle);
-	public boolean validateTotalMarks(double testTotalMarks);
 
 
 	public Test updateTest(int testId, Test test) throws OnlineTestException;
