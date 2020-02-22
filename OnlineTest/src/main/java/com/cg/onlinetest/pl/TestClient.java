@@ -28,7 +28,7 @@ public class TestClient {
 		set1.add(q1);
 		set2.add(q2);
 		
-		Test  test1 = new Test(1001,"",LocalTime.now(),set1,100.0,0.0,q1,LocalDateTime.now(),LocalDateTime.now());
+		Test  test1 = new Test(1001,"rajeev",LocalTime.now(),set1,100.0,0.0,q1,LocalDateTime.now(),LocalDateTime.now());
 		Test  test2 = new Test(1002,"",LocalTime.now(),set2,100.0,0.0,q1,LocalDateTime.now(),LocalDateTime.now());
 		testmap.put(1001, test1);
 		testmap.put(1002, test2);
@@ -52,8 +52,8 @@ public class TestClient {
 		    {
 		    case 1:
 		    	
-		    /*	try
-		    	{
+		    	  /*  	try
+		  	{
 		    	 test=testservice.addTest(test);
 		    	System.out.println("Test Id= "+testId);
 		    	}
@@ -66,43 +66,36 @@ public class TestClient {
 		    case 2:
 		    	try
 		    	{
-		    		 System.out.println("Enter the testId");
+		    		System.out.println("Enter the testId");
 		    		  testId=sc.nextInt();
-		    		  test=testservice.updateTest(testId,test); 
+		    		 
+		    		  
 		    		  sc.nextLine();
 		    		  System.out.println("Enter the testTitle");
 		    		 String testTitle=sc.nextLine();
 		    		 
-		    		  System.out.println("Enter the testDuration");
-		    		LocalTime  testDuration=LocalTime.now();
-		    		  sc.nextLine();
+		    	//	  System.out.println("Enter the testDuration");
+		    	//	LocalTime  testDuration=LocalTime.now();
+		    		//  sc.nextLine();
 		    		  System.out.println("Enter the testTotalMarks");
 		    		double  testTotalMarks=sc.nextDouble();
 		    		  sc.nextLine();
-		    		  System.out.println("Enter the testMarksScored");
-			    		double  testMarksScored=sc.nextDouble();
+		    		 
 			    		
 			    	//	 System.out.println("Enter the StartTime");
-				    		LocalDateTime  startTime=LocalDateTime.now();
+				    	//	LocalDateTime  startTime=LocalDateTime.now();
 				    		  
 				    		// System.out.println("Enter the endTime");
-					    		LocalDateTime  endTime=LocalDateTime.now();
-					    		test.setTestId(testId);
-					    		test.setTestTitle(testTitle);
-					    		test.setTestDuration(testDuration);
-					    		test.setTestTotalMarks(testTotalMarks);
-					    		test.setTestMarksScored(testMarksScored);
-					    		test.setStartTime(startTime);
-					    		test.setEndTime(endTime);
-		    		System.out.println("TestId "+testId);
-		    		System.out.println("TestTitle "+testTitle);
-		    		System.out.println("TestDuration "+testDuration);
-		    		System.out.println("TestTotalMarks "+testTotalMarks);
-		    		System.out.println("TestMarksScored "+testMarksScored);
-		    		System.out.println("StartTime "+startTime);
-		    		System.out.println("EndTime "+endTime);
-		    		
-		    		 
+					    	//	LocalDateTime  endTime=LocalDateTime.now();
+					    				
+					    	    test1.setTestId(testId);
+					    		test1.setTestTitle(testTitle);
+					    	//	test1.setTestDuration(testDuration);
+					    		test1.setTestTotalMarks(testTotalMarks);
+					    		
+					    		//test1.setStartTime(startTime);
+					    	//	test1.setEndTime(endTime);
+					    		 test=testservice.updateTest(testId,test1);   		
 		    		 
 		    	}
 		    	catch(OnlineTestException e)
@@ -179,6 +172,7 @@ public class TestClient {
 		    		System.err.println(e.getMessage());
 		    	}*/
 		    case 8:
+		   System.out.println(test1.getTestId()+" "+test1.getTestTitle()+" "+test1.getTestMarksScored());
 		    	
 		    	System.out.println("exit");
 		    	

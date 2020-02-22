@@ -45,8 +45,7 @@ public class TestDaoMapImpl implements TestDao {
 		
 		if(flag)
 		{
-			
-			test=testmap.replace(testId,test);
+		test=testmap.put(testId, test);
 		}
 		else
 		{

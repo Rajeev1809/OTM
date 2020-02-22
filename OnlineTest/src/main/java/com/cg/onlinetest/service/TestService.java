@@ -10,8 +10,12 @@ import com.cg.onlinetest.exception.OnlineTestException;
 public interface TestService {
 	public boolean validateTestId(int testId);
 
-	public Test  updateTest(int testId,Test test) throws OnlineTestException;
+	
 	public Test deleteTest(int testId)throws OnlineTestException;
 	
+	public boolean validateTitle(String testTitle);
+	public boolean validateTotalMarks(double testTotalMarks);
 
+
+	public Test updateTest(int testId, Test test) throws OnlineTestException;
 }

@@ -11,31 +11,69 @@ public class TestServiceImpl implements TestService {
 	public TestServiceImpl() {
 		testDao=new  TestDaoMapImpl();
 	}
+	@Override
+	public boolean validateTitle(String testTitle) {
+		boolean flag =false;
+		flag=testTitle.matches("[a-zA-Z]+");
+
+		return flag;
+		}
 
 	@Override
 	public boolean validateTestId(int testId) {
+		String testid=String.valueOf(testId);
 		boolean flag=false;
-		if(testId>=0)
+		 flag=testid.matches("[0-9]{4}+");
+		return flag;
+	}
+	@Override
+	public boolean validateTotalMarks(double testTotalMarks) {
+		String testtotalmarks=String.valueOf(testTotalMarks);
+		boolean flag=false;
+		if(testTotalMarks>0&&testTotalMarks<100)
 		{
 			flag=true;
-		}
-		else
-		{
-			flag=false;
+		 flag=testtotalmarks.matches("[0-9]{2}+");
 		}
 		return flag;
 	}
-
 @Override
 	public Test updateTest( int testId,Test test) throws OnlineTestException {
-	String testid=String.valueOf(testId);
-	boolean flag=testid.matches("[0-9]{4}");
-	if(!flag)
+	
+	boolean a=false;
+	a=validateTestId(testId); 
+	if(a==false)
 	{
+	if(testId<0)
+	{
+		throw new OnlineTestException(" id should  be positive");
+	}
 		throw new OnlineTestException(" id should  contains 4 digits");
 	}
+	//String testTitle=String.valueOf(test.getTestTitle());
+	
+	boolean f=validateTitle(test.getTestTitle()); 
+	if(f==false)
+	{
+		throw new OnlineTestException(" title should  contains valid charcters");
+	}
+	
+	
+	boolean b=validateTotalMarks(test.getTestTotalMarks()); 
+	if(b==false)
+	{
+	if(test.getTestTotalMarks()<0)
+	{
+		throw new OnlineTestException(" marks should  be positive");
+	}
+		throw new OnlineTestException(" marks should be between 0 to 100");
+	}
+	
 	return testDao.updateTest(testId,test);
 	}
+
+
+
 
 	@Override
 	public Test deleteTest(int testId) throws OnlineTestException {
@@ -47,5 +85,8 @@ public class TestServiceImpl implements TestService {
 		}
 		return testDao.deleteTest(testId);
 	}
+	
+	
+	
 	
 }
